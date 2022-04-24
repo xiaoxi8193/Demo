@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -63,4 +64,12 @@ dependencies {
 
     // 启动动画
     implementation 'androidx.core:core-splashscreen:1.0.0-beta02'
+
+    //room
+    def room_version = "2.4.2"
+    implementation "androidx.room:room-runtime:$room_version"
+    //注解器：抽象类自动生成实现类
+    kapt "androidx.room:room-compiler:$room_version"
+    // 对 Room 的 Kotlin 扩展和协程支持
+    implementation "androidx.room:room-ktx:$room_version"
 }
