@@ -3,6 +3,7 @@ package com.example.demo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.demo.room.MyAppDatabase
 import com.example.demo.utils.transparentStatusBar
 
 

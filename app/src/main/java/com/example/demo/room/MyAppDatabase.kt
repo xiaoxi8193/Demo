@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.demo.room.dao.UserDao
 import com.example.demo.room.entity.User
 
 /**
@@ -14,6 +15,9 @@ import com.example.demo.room.entity.User
     version = 1
 )
 abstract class MyAppDatabase : RoomDatabase() {
+
+    abstract fun userDao() : UserDao
+
     companion object {
         // Singleton prevents multiple instances of database opening at the
         // same time.
