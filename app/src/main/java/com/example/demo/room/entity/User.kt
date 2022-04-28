@@ -11,8 +11,8 @@ import androidx.room.PrimaryKey
 data class User(
     @PrimaryKey(autoGenerate = true) var id: Int = 0,
     @ColumnInfo(name = "UID") val uid : String = "",
-    @ColumnInfo(name = "USERNAME") val username : String = "",
+    @ColumnInfo(name = "USERNAME",defaultValue = "ss-admin") val username : String = "",
     @ColumnInfo(name = "NAME") val name : String = "",
-    @ColumnInfo(name = "PASSWORD") val password : String = "",
+    @ColumnInfo(name = "PASSWORD",defaultValue = "admin") val password : String = "",
     @ColumnInfo(name = "SALT") val salt : String = "",
 )
