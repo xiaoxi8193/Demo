@@ -193,13 +193,19 @@ fun LoginScreen() {
                     )
                 )
 
-
                 Spacer(modifier = Modifier.height(8.dp))
 
                 TextButton(onClick = {
 
                 }) {
                     Text(text = "登录", color = Color.White)
+                }
+
+                Spacer(modifier = Modifier.height(8.dp))
+                TextButton(onClick = {
+
+                }) {
+                    Text(text = "新增", color = Color.White)
                 }
             }
         }

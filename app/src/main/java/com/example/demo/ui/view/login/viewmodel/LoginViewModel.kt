@@ -7,6 +7,7 @@ import com.example.demo.room.MyAppDatabase
 import com.example.demo.room.entity.User
 import com.example.demo.util.checkCoroutines
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import javax.inject.Inject

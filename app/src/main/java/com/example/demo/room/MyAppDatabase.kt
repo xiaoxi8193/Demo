@@ -16,13 +16,16 @@ import com.example.demo.room.entity.User
 )
 abstract class MyAppDatabase : RoomDatabase() {
 
-    abstract fun userDao() : UserDao
+    abstract fun userDao(): UserDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
         // same time.
         @Volatile
         private var INSTANCE: MyAppDatabase? = null
+
+        private const val DATABASE_NAME = "ys_database"
+        private const val DATABASE_DIR = "database/myapp.db" // Assets/database/myapp.db
 
         fun getDatabase(context: Context): MyAppDatabase {
             val tempInstance = INSTANCE
@@ -33,8 +36,10 @@ abstract class MyAppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     MyAppDatabase::class.java,
-                    "ys_database"
-                ).build()
+                    DATABASE_NAME
+                )
+                    //.createFromAsset(DATABASE_DIR)
+                    .build()
                 INSTANCE = instance
                 return instance
             }
